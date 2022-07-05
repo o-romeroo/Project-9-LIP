@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Arduino com Tinkercad</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leopard@^1/dist/index.min.css"
+    />
+  </head>
+
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <div id="project" style="position: absolute; right: 0%;"></div>
+    <script type="module">
+      import project from "./index.js";
+      project.attach("#project");
+      document.querySelector("#greenFlag").addEventListener("click", () => {
+        project.greenFlag();
+      }); // Autoplay project.greenFlag();
+    </script>
+
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <div class="row justify-content-center" style="width: 100vw;">
+            <div class="col-auto">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div>
+                <div
+                  class="collapse navbar-collapse"
+                  id="navbarSupportedContent"
+                >
+                  <ul
+                    class="navbar-nav me-auto mb-2 mb-lg-0 softpaddingright morepeddingright"
+                  >
+                    <li class="nav-item active">
+                      <a class="nav-link" aria-current="page" href="#TUTORIAL"
+                        >Pisca-pisca no Tinkercad</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="desativar">|</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#INTERESSANTES"
+                        >Links Interessantes de Arduino</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="desativar">|</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#PROGRAMACAO"
+                        >Links de Programação em Arduino</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="desativar">|</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#SLNOVA"
+                        >Sociedade Artificial com SLNova</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" id="desativar">|</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#SCRATCH"
+                        >Jogo Turing Awards em Scratch</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="container-fluid fundoClaro"
+      style="margin-top: 50px;"
+      id="TUTORIAL"
+    >
+      <div class="row justify-content-center fundoEscuro">
+        <div class="borda" style="margin-top: 30px; margin-bottom: 30px;">
+          <h2>Seja bem-vindo(a) a nossa pagina do projeto de L.I.P.</h2>
+          <h5>Aqui vamos ensinar você a:</h5>
+          <p>
+            &bull; Construir um projeto de pisca-pisca utilizando 2 arduinos no
+            tinkercad
+          </p>
+          <p>
+            &bull; Apresentar links interessantes para você aprender a utilizar
+            o arduino e o tinkercad
+          </p>
+          <p>&bull; Apresentar links sobre programação em arduino fisico</p>
+          <p>
+            &bull; Apresentar um jogo criado em scratch sobre os ganhadores do
+            premio turing e um link de seus atores
+          </p>
+          <p>
+            &bull; Apresentar um trabalho sobre sociedade artificial no Starlogo
+            Nova
+          </p>
+          <h6>Basta utilizar o menu acima para navegar, divirta-se ;)</h6>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="borda">
+          <div style="margin-top: 30px; text-align: center;">
+            <h2>Projeto de pisca-pisca em Arduino pelo Tinkercad</h2>
+          </div>
+          <div style="margin-top: 30px;">
+            <h2>Passo a passo projeto pisca pisca:</h2>
+            <p>
+              1 - Ir em componentes básicos, selecionar e arrastar para a área
+              de edição "Arduíno Uno R3";
+            </p>
+            <p>
+              2 - Realizar o passo 1 novamente, posicionando lado a lado 2
+              arduínos UNO;
+            </p>
+            <p>
+              3 - Clicar em Ground ("GND") em um arduíno e conectar o fio no
+              "GND" deste segundo arduíno;
+            </p>
+            <p>
+              4 - Selecionar o componente básico "LED" e arrastar para a área de
+              edição, posicionando acima de uma porta Digital;
+            </p>
+            <p>
+              5 - Realizar o passo 4 novamente, mas agora posicionando o led
+              acima da porta Digital do outro arduíno;
+            </p>
+            <p>
+              6 - Selecionar o componente básico "Resistor", posicionar acima de
+              cada arduíno, entre o arduíno e o led.
+            </p>
+            <p>
+              7 - Ligar um conector do led na porta GND e outro no resistor;
+            </p>
+            <p>8 - Ligar o resistor em uma porta digital;</p>
+            <p>9 - Fazer isso com nos dois arduínos;</p>
+          </div>
+          <div style="margin-top: 30px;">
+            <h4>
+              Parabéns, a primeira parte já esta concluída, agora vamos para a
+              parte de programação do arduíno.
+            </h4>
+            <p>
+              1 - Na parte de código, vamos utilziar a linguagem de blocos para
+              simplificar a programação.
+            </p>
+            <p>
+              2 - Verifique que o "1(Arduino Uno R3)" esteja selecionado, após
+              isto clique em saída e arraste o bloco "definir LED incorporado
+              como ALTO" para dentro do bloco "para sempre";
+            </p>
+            <p>
+              3 - Clique em "Controlar", arraste o bloco "aguardar 1 s" e
+              encaixe abaixo do bloco referente ao passo anterior;
+            </p>
+            <p>
+              4 - Colocar os mesmos blocos na mesma ordem abaixo do bloco
+              "aguardar 1 s", mas desta vez mudando o bloco "definir LED
+              incorporado como ALTO" para "BAIXO";
+            </p>
+            <p>
+              5 - Agora selecione o segundo arduíno e faça o mesmo processo,
+              tomando o cuidado de começar desta vez com o bloco "definir LED
+              incorporado como BAIXO" e da segunda vez que o for utilizar mudar
+              de "BAIXO" para "ALTO";
+            </p>
+            <p>
+              Pronto o seu pisca pisca foi construído com sucesso, agora para
+              testar basta clciar em "Iniciar simulação".
+            </p>
+            <h2 style="padding-top: 30px;">Projeto interativo no Tinkercad:</h2>
+          </div>
+        </div>
+        <div
+          class="col-auto borda"
+          style="padding-top: 10px; padding-bottom: 30px;"
+        >
+          <iframe
+            class="iframeA"
+            width="0"
+            height="0"
+            src="https://www.tinkercad.com/embed/gbnQmE5R1qN?editbtn=1"
+            frameborder="0"
+            marginwidth="0"
+            marginheight="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid fundoEscuro" id="INTERESSANTES">
+      <h1 style="text-align: center; padding-top: 20px;">
+        Links Interessantes de Arduino
+      </h1>
+      <div class="row justify-content-center">
+        <div class="col-12 borda">
+          <h3 style="padding-top: 10px;">
+            Videos e Sites sobre Arduino no Tinkercad:
+          </h3>
+        </div>
+        <div class="borda" style="margin-top: 10px; margin-bottom: 30px;">
+          <p style="padding-bottom: 10px;">
+            Aqui voce pode ver links interessantes sobre arduino, basta clicar
+            em <strong>+ Mostrar links</strong> para ver mais links
+            interessantes
+          </p>
+
+          <div class="row">
+            <div class="col-xl-5 col-md-12">
+              <iframe
+                class="iframeb"
+                width="100%"
+                height="300"
+                src="https://www.youtube.com/embed/WTQ87oo9LsA"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="col-xl-7 col-md-12">
+              <a
+                href="https://www.youtube.com/watch?v=WTQ87oo9LsA&ab_channel=BrincandocomIdeias"
+              >
+                <h2>1: O início do thinkercad!</h2>
+              </a>
+              <p>
+                &bull; Maneira simples e básica de como inciar a utilização do
+                thinkercad.
+              </p>
+            </div>
+          </div>
+          <div class="meiaBorda" style="margin: 20px 0px;">
+            <p style="text-align: right; margin-right: -20px;">
+              <a
+                class="btn btn-secondary"
+                data-bs-toggle="collapse"
+                href="#collapseExample1"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample1"
+              >
+                + Mostrar links
+              </a>
+            </p>
+          </div>
+          <div class="collapse" id="collapseExample1">
+            <div class="col">
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/j7ePCEKYKyQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=j7ePCEKYKyQ&ab_channel=GVensino"
+                  >
+                    <h2>2: Base do arduíno!</h2>
+                  </a>
+                  <p>
+                    &bull; Mostrando como funciona o arduíno e de maneira fácil
+                    como funciona seus circúitos.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/Y_1WDlRnrfU"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a href="ttps://www.youtube.com/watch?v=Y_1WDlRnrfU">
+                    <h2>3: Tutorial semáforo.</h2>
+                  </a>
+                  <p>
+                    &bull; Vídeo de tutorial no thinkercad usando arduíno
+                    ensinando a como fazer um semáforo.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/kv2M9qwooSE"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=kv2M9qwooSE&ab_channel=profThiagoMaker"
+                  >
+                    <h2>4: MODELANDO EM 3d.</h2>
+                  </a>
+                  <p>
+                    &bull; Nesse vídeo é possível entender como modelar em 3D e
+                    criar figuras no thinkercad.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/eN7b8ksgadY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=eN7b8ksgadY&ab_channel=SauloLeite"
+                  >
+                    <h2>5: Detecor de incêndio.</h2>
+                  </a>
+                  <p>
+                    &bull; Como o thinkercad pode ser útil, não é mesmo? Vídeo
+                    de como fazer um detector de incêncio para ajudar em
+                    edifícios e escolas.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/CrHJj4OQ6Sw"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=CrHJj4OQ6Sw&ab_channel=ManualdoMundo"
+                  >
+                    <h2>6: MANUAL DO MUNDO E O THINKERCAD!</h2>
+                  </a>
+                  <p>
+                    &bull; Vídeo mega interessante do prestigiado canal MANUAL
+                    DO MUNDO ensinado o básico do thinkercad e auduíno.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    frameborder="0"
+                    src="https://blog.smartkits.com.br/tipos-de-arduino/"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a href="https://blog.smartkits.com.br/tipos-de-arduino/">
+                    <h2>7: Categorias de ARDUÍNO NA PLATAFORMA</h2>
+                  </a>
+                  <p>
+                    &bull; O SITE apresenta várias peças que podem ser
+                    utilizadas para funções diferentes e acabam criando um leque
+                    de possibilidades.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/RYBjpiHnP74"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=RYBjpiHnP74&ab_channel=LaboratóriodaJulia"
+                  >
+                    <h2>8: PROJETOS INACREDITÁVEIS!</h2>
+                  </a>
+                  <p>
+                    &bull; O link direcionará a um vídeo onde a youtuber Júlia
+                    irá mostrar 5 projetos fantásticos feitos no thinkercad com
+                    o arduíno.
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    frameborder="0"
+                    src="https://blog.smartkits.com.br/tipos-de-arduino/"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://sol.sbc.org.br/index.php/wie/article/view/13310"
+                  >
+                    <h2>9: Artigo Científico!</h2>
+                  </a>
+                  <p>
+                    &bull; ARTIGO CIENTÍFICO sobre o nosso querido thinkercad
+                    que todos os alunos gostam tanto de estudar!
+                  </p>
+                </div>
+              </div>
+              <div class="row videosIdent">
+                <div class="col-xl-5 col-md-12">
+                  <iframe
+                    class="iframeb"
+                    width="100%"
+                    height="300"
+                    src="https://www.youtube.com/embed/GwYuixn_9Yg"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-xl-7 col-md-12">
+                  <a
+                    href="https://www.youtube.com/watch?v=RYBjpiHnP74&ab_channel=LaboratóriodaJulia"
+                  >
+                    <h2>10: Top 20 Arduino Projects</h2>
+                  </a>
+                  <p>
+                    &bull; Este vídeo é um compilado de diversas ideias
+                    criativas e interessantes postas em prática graças à
+                    utilização de Arduino. Várias destas ideias servem de
+                    inspiração para diversos projetos escolares, e dispertam a
+                    curiosidade de jovens e crianças sobre as possibilidades de
+                    fazer suas ideias se tornarem realidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid fundoClaro" id="PROGRAMACAO">
+      <h1 style="text-align: center; padding-top: 20px;">
+        Links de Programação em Arduino
+      </h1>
+      <div class="row justify-content-center">
+        <div class="col-12 borda">
+          <h3 style="padding-top: 10px;">
+            Lista com 10 links interessantes sobre programação com Arduino
+            fisico:
+          </h3>
+        </div>
+        <div class="borda" style="margin-top: 10px; margin-bottom: 30px;">
+          <a
+            class="linkEscuro"
+            href="https://www.circuitar.com.br/tutoriais/programacao-para-arduino-primeiros-passos/"
+          >
+            <p><strong>&bull; Primeiros passos com o Arduino</strong></p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://professor.luzerna.ifc.edu.br/marcelo-cendron/wp-content/uploads/sites/40/2017/03/Programação-para-Arduino-Primeiros-Passos-Conceitos-iniciais-de-programação-para-Arduino-Projeto-de-eletrônica-modular-com-Arduino-Circuitar.pdf"
+          >
+            <p>
+              <strong
+                >&bull; Primeiros passos para eletronica modular com arduino
+                circuitar</strong
+              >
+            </p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://www.usinainfo.com.br/blog/arduino-ide-o-software-para-gravacao-de-codigos-no-arduino/"
+          >
+            <p>
+              <strong
+                >&bull; Arduino IDE, o software para gravacao de codigos</strong
+              >
+            </p>
+          </a>
+          <a class="linkEscuro" href="https://www.arduino.cc/en/software">
+            <p><strong>&bull; Software oficial do Arduino</strong></p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://www.filipeflop.com/blog/programando-linkit-one-com-arduino-ide/"
+          >
+            <p>
+              <strong>&bull; Programando Linkit One com arduino IDE</strong>
+            </p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://store.arduino.cc/usa/arduino-uno-rev3"
+          >
+            <p><strong>&bull; Arduni Uno Rev3</strong></p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://doity.com.br/adquira-um-arduino-e-aprenda-a-programar"
+          >
+            <p>
+              <strong>&bull; Adquira um arduino e aprenda a programar</strong>
+            </p>
+          </a>
+          <a class="linkEscuro" href="https://www.cursodearduino.net">
+            <p><strong>&bull; Curso de Arduino</strong></p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://www.embarcados.com.br/conheca-o-software-arduino-basicact/"
+          >
+            <p><strong>&bull; Conheça o software Arduino Basicact</strong></p>
+          </a>
+          <a
+            class="linkEscuro"
+            href="https://clubedeautores.com.br/livro/programando-a-placa-arduino-uno-em-basic-com-base-no-bascom"
+          >
+            <p>
+              <strong>&bull; Programando a placa Arduino Uno em Basic</strong>
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fundoEscuro">
+      <div
+        class="container-fluid borda"
+        id="SLNOVA"
+        style="padding-bottom: 30px;"
+      >
+        <h1
+          style="text-align: center; padding-top: 20px; padding-bottom: 20px;"
+        >
+          Sociedade Artificial com SLNova
+        </h1>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-6">
+            <iframe
+              class="iframeC"
+              src="https://www.slnova.org/CaioGalo9/projects/846854/"
+              allowtransparency="true"
+              frameborder="0"
+              scrolling="yes"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <h3>Quer aprender os conceitos basicos de sociedade artificial?</h3>
+            <p>
+              Para começar uma sociedade artificial é quando varias
+              inteligencias artificiais se encontram num ambiente e interagem
+              entre si, sendo assim elas podem aprender umas com as outras,
+              interagir e gerar resultados bastante interessantes
+            </p>
+            <p>
+              É para isso que existe a Starlogo Nova, para apresentar esses
+              conceitos basicos para quem ainda esta aprendendo de forma simples
+              e direta
+            </p>
+            <p>
+              <a
+                class="linkSL"
+                href="https://www.slnova.org/CaioGalo9/projects/846854/"
+                ><strong>Clicando aqui</strong></a
+              >
+              voce pode ver este projeto diretamente no site e edita-lo para
+              aprender melhor
+            </p>
+
+            <h6>Quer ver um projeto que tenha apenas 1 presa e 1 predador?</h6>
+            <p>
+              Você pode conferir neste link
+              <a
+                class="linkSL"
+                href="https://www.slnova.org/ToniLommez/projects/846299/"
+                ><strong>aqui!</strong></a
+              >
+            </p>
+            <p>
+              Com ele você pode começar a criar o seu proprio e entender o
+              conceito a partir do basico
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fundoClaro">
+      <div
+        class="container-fluid borda"
+        id="SCRATCH"
+        style="padding-bottom: 30px;"
+      >
+        <h1
+          style="text-align: center; padding-top: 20px; padding-bottom: 20px;"
+        >
+          Jogo Turing Awards em Scratch
+        </h1>
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-6">
+            <iframe
+              class="iframeC"
+              src="https://scratch.mit.edu/projects/683758486/embed"
+              allowtransparency="true"
+              frameborder="0"
+              scrolling="no"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <h3>Achou interessante o jogo?</h3>
+            <p>
+              Se quiser saber tudo sobre esse game e como ele foi feito e
+              funciona então se liga:
+            </p>
+            <p>
+              Você pode ler todo o conteudo que esta dentro dele apenas clicando
+              para mixar o game dentro do scratch!
+            </p>
+            <p>
+              É so
+              <a
+                class="linkScratch"
+                href="https://scratch.mit.edu/projects/683758486/editor/"
+                ><strong>clicar aqui!</strong></a
+              >
+            </p>
+            <h6>Quer usar os atores do nosso jogo?</h6>
+            <p>
+              Temos todos eles salvos separadamente neste estudio
+              <a
+                class="linkScratch"
+                href="https://scratch.mit.edu/studios/31509670"
+                ><strong>aqui!</strong></a
+              >
+            </p>
+            <p>Agora é so se divertir e aprender bastante!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-auto" style="text-align: center;">
+            <p>
+              © Copyright 2022 - Caio Alcântara, Gabriel Ramos, João Vitor
+              Romero, Marcos Antonio Lommez
+            </p>
+            <p>771157 - Puc Minas - Desenvolvimento e Interface Web</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
